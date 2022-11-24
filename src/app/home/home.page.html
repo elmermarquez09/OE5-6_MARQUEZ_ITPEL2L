@@ -1,0 +1,93 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="warning">
+    <ion-title class="ion-text-center">
+      Add Student Record
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <ion-card class="ion-no-padding">
+    <ion-card-header class="ion-no-padding">
+      <ion-img  src="https://t3.ftcdn.net/jpg/01/78/65/02/360_F_178650212_oePgGaIhKUhz0cIg2bLBGsFsdbWs5Xwj.jpg"></ion-img>
+    </ion-card-header>
+  </ion-card>
+  <ion-list>
+    <ion-item>
+      <ion-label position="floating"> Student Number </ion-label>
+      <ion-input [(ngModel)]="student_number" type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating"> Student Name </ion-label>
+      <ion-input [(ngModel)]="student_name" type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating"> Email Address </ion-label>
+      <ion-input [(ngModel)]="email" type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating"> Contact Number </ion-label>
+      <ion-input [(ngModel)]="contact_number" type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating"> Home Address </ion-label>
+      <ion-input [(ngModel)]="home_address" type="text"></ion-input>
+    </ion-item>
+    
+
+
+    <!-- Add Button -->
+    <ion-row>
+      <ion-col>
+        <ion-button type="button" (click)="addStudent()" color="success" shape="full" expand="block">
+          Add Student
+        </ion-button>
+      </ion-col>
+    </ion-row>
+
+
+
+    <ion-row>
+      <ion-col>
+        <ion-button type="button" (click)="getStudents()" 
+        color="primary" shape="full" expand="block"> View Records</ion-button>
+      </ion-col>
+    </ion-row>
+
+  </ion-list>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <ion-list>
+    <ion-list-header>Student List</ion-list-header>
+    <ion-item lines="inset" *ngFor="let student of students">
+      <ion-label>
+        <h5>{{student.student_number}} - {{student.student_name}}, {{student.email}} , {{student.contact_number}} , {{student.home_address}}</h5>
+      </ion-label>
+      <div class="item-note">
+        <ion-icon name="create" style="zoom: 2.0" [routerLink]="['/update-student',student.id]"></ion-icon>
+        <ion-icon name="trash" style="zoom: 2.0" (click)="deleteStudent(student.id)"></ion-icon>
+      </div>
+  
+    </ion-item>
+  </ion-list>
+
+</ion-content>

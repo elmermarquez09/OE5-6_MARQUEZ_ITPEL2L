@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Update Student</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list lines="full">
+    <ion-item>
+      <ion-label position="floating"> Student Number </ion-label>
+      <ion-input [(ngModel)]="student_number" type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating"> Student Name </ion-label>
+      <ion-input [(ngModel)]="student_name" type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating"> Email Address </ion-label>
+      <ion-input [(ngModel)]="email" type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating"> Contact Number </ion-label>
+      <ion-input [(ngModel)]="contact_number" type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating"> Home Address </ion-label>
+      <ion-input [(ngModel)]="home_address" type="text"></ion-input>
+    </ion-item>
+
+    <ion-row>
+      <ion-col>
+        <ion-button type="button" (click)="updateStudent()"
+        color="primary" shape="full" expand="block">Update Student</ion-button>
+      </ion-col>
+    </ion-row>
+
+
+
+
+  </ion-list>
+
+</ion-content>
